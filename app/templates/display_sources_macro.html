@@ -1,0 +1,20 @@
+{% macro display_sources(sources) %}
+<div class="container">
+    <div>
+        <br><br>
+    </div>
+    <div class="card-columns">
+        {% for source in sources %}
+        <div class="card">
+            <div class="card-header">
+                <a href="/"><h1 class="text-center">{{source.name}}</h1></a>
+            </div>
+            <div class="card-body">
+                <p>{{source.description}}</p>
+                <p><br>{{ source.category }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}
