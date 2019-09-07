@@ -1,5 +1,6 @@
 from config import Config
 import requests
+from .models import News
 
 
 class NewsRequest:
@@ -12,7 +13,9 @@ class NewsRequest:
         response = requests.get(sources_url)
         if response.status_code == 200:
             for data in response.json()['sources']:
-                pass
+                sources.append(data)
+            print(sources)
+            return sources
 
     def get_news(self, source):
         pass
