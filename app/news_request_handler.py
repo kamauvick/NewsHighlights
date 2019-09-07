@@ -1,4 +1,5 @@
 from config import Config
+import requests
 
 
 class NewsRequest:
