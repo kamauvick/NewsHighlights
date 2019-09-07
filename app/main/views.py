@@ -1,7 +1,13 @@
+from flask import render_template
+
+from app.news_request_handler import NewsRequest
 from . import main
-from flask import Flask, render_template
+
+news_request_handler = NewsRequest()
 
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    sources = news_request_handler.get_sources()
+    if sources:
+        return render_template('index.html', sources=sources)
