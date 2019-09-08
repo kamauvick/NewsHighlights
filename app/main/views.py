@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 
 from app.news_request_handler import NewsRequest
 from . import main
@@ -13,8 +13,12 @@ def index():
         return render_template('index.html', sources=sources)
 
 
-@main.route('/articles')
+@main.route('/articles', methods=["POST", "GET"])
 def articles_page():
-    articles = news_request_handler.get_articles('everything')
-    if articles:
-        return render_template('articles_display.html', articles=articles)
+    if request.method == 'POST':
+        search = request.form.get("search")
+        articles = news_request_handler.get_articles(search)
+    else:
+        articles = news_request_handler.get_articles("tech")
+    return render_template('articles_display.html', articles=articles)
+    # return render_template('404.html', error = "Error while making request")
