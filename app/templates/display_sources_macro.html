@@ -6,13 +6,16 @@
     <div class="card-columns">
         {% for source in sources %}
         <div class="card">
-            <div class="card-header">
-                <a href="/"><h1 class="text-center">{{source.name}}</h1></a>
+            <div class="card-header bg-info" style="opacity:1;">
+                <a href="/" style="color:#000000; font-family:system-ui; font-size:15px;"><h1 class="text-center">{{source.name}}</h1></a>
             </div>
             <div class="card-body">
                 <p>{{source.description}}</p>
                 <p><br>{{ source.category }}</p>
             </div>
+<!--            <div class="card-footer">-->
+<!--                <a href="{{source.url}}"><button class="btn btn-success">View more</button></a>-->
+<!--            </div>-->
         </div>
         {% endfor %}
     </div>
