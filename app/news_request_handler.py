@@ -26,3 +26,14 @@ class NewsRequest:
                 articles.append(data)
             print(articles)
             return articles
+
+    def get_article_by_source(self, id):
+        source_article = []
+        source_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(id, self.API_KEY)
+        response = requests.get(source_articles_url)
+        if response.status_code == 200:
+            for data in response.json()['articles']:
+                source_article.append(data)
+            print('This is a test string...')
+            print(source_article)
+            return source_article

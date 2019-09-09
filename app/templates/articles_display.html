@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% from 'display_articles_macro.html' import display_articles%}
+{% import 'display_articles_macro.html' as dm %}
 {% block content %}
-<div>{{ display_articles(articles)}}</div>
+<div>{{ dm.display_articles(source_articles)}}</div>
 {% endblock %}

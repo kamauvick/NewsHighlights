@@ -1,0 +1,41 @@
+.navbar{
+background-color:#032535;
+}
+.articles{
+background-color:#032535;
+margin-top:40px;
+}
+.sources{
+background-color:#032535;
+margin-top:40px;
+}
+.single_article{
+background-color:#032535;
+margin-top:40px;
+}
+card, card-img-top{
+border:none;
+}
+.hjumbo{
+background-image:url('https://img1.akspic.com/fit/142647-black-red-maroon-night-light-x750.jpg');
+}
+
+.txt{
+font-family: 'Special Elite', cursive;
+font-size:50px;
+color:orange;
+}
+.htext{
+font-family: 'Love Ya Like A Sister', cursive;
+}
+.ch{
+background-color:#dbd7cb;
+border:none;
+}
+.category{
+font-family: 'Love Ya Like A Sister', cursive;
+color: #d04925;
+}
+.cat{
+font-family: 'Love Ya Like A Sister', cursive;
+}

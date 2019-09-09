@@ -20,5 +20,11 @@ def articles_page():
         articles = news_request_handler.get_articles(search)
     else:
         articles = news_request_handler.get_articles("tech")
-    return render_template('articles_display.html', articles=articles)
-    # return render_template('404.html', error = "Error while making request")
+    return render_template('articles.html', articles=articles)
+
+
+@main.route('/article/<id>')
+def source_article(id):
+    source_articles = news_request_handler.get_article_by_source(id)
+    source = id
+    return render_template('articles_display.html', source_articles=source_articles, source=source)
